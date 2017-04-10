@@ -1,15 +1,14 @@
-﻿using Akavache;
+using Akavache;
 using System.Reactive.Linq;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
-using Finetuner.Models.Administration;
 using Newtonsoft.Json;
 using System.Collections;
 
-namespace Finetuner.Services.Storage
+namespace Services.Storage
 {
     /// <summary>
     /// Manages the cache storing a dictionary in it.

@@ -1,4 +1,4 @@
-using Akavache;
+﻿using Akavache;
 using System.Reactive.Linq;
 using System;
 using System.Collections.Generic;
@@ -12,9 +12,6 @@ namespace Services.Storage
 {
     /// <summary>
     /// Manages the cache storing a dictionary in it.
-    /// Key for USER: 'user #' (main user will be user 0)
-    /// Key for DEVICE: 'device #'
-    /// Key for GUID: "userToken"
     /// </summary>
     class CacheManager
     {
@@ -92,24 +89,7 @@ namespace Services.Storage
         //public static void Flush()
         //{
         //    BlobCache.Shutdown().Wait();
-        //}
-
-
-
-
-
-        public async Task<IEnumerable<User>> GetChildren()
-        {
-            List<User> list = (List<User>)await cache.GetAllObjects<User>();
-            list.Remove(list?.Single(u => u.CacheID == 0));
-            if (list.Count() > 1)
-                list = list.OrderBy(u => u.CacheID).ToList();
-            Debug.WriteLine("I've found " + list.Count() + " managed users");
-            return list;
-        }
-
-
-      
+        //}      
 
 
 
